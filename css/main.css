@@ -27,5 +27,31 @@ margin-left:-450px;
 background:transparent;
 }	
 
-.text{float:right;}
-.bank{float:left;}
+.text
+{
+	float:right;
+}
+.bank
+{
+	float:left;
+	position: relative;
+}
+.juice
+{
+	position: absolute;
+	top: 71px;
+	left: 30px;
+}
+.mask,.inner, .inner img
+{
+	position: relative;
+}
+.inner
+{
+	top:450px;
+	overflow: hidden;
+}
+.inner img
+{
+	top:-450px;
+}

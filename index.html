@@ -14,20 +14,7 @@
 </head>
 <body>
 <div id="fb-root"></div>
-<script>
-     window.fbAsyncInit = function() {
-         FB.init({
-             appId: 158660530866473,
-             status: true
-         });
-         FB.Event.subscribe('edge.create', function(href, widget) {
 
-         });
-         FB.Event.subscribe('edge.remove', function(href, widget) {
-
-         });
-     };
- </script>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
@@ -35,12 +22,34 @@
   js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=158660530866473";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-	
+	<script>
+     window.fbAsyncInit = function() {
+         FB.init({
+             appId: 158660530866473,
+             status: true
+         });
+         FB.Event.subscribe('edge.create', function(href, widget) {
+         	likeAnimation();
+         });
+         FB.Event.subscribe('edge.remove', function(href, widget) {
+         	unlikeAnimation();
+         });
+     };
+ </script>
 	
 	<div id="main">
 	
 		
-	<div class="bank"><img src="img/bank1.png"></div>
+	<div class="bank">
+		<img src="img/bank1.png">
+		<div class="juice">
+			<div class="mask">
+				<div id="mask" class="inner">
+					<img id="masked" src="img/juice.png" />
+				</div>
+			</div>
+		</div>
+	</div>
 	
 	<div class="text">
 		<dd style="text-align:center;"><img src="img/way_ua.png"><br><br><br>
@@ -107,6 +116,7 @@ VK.Widgets.Like("vk_like", {type: "button", height: 20});
 
 
 <script type="text/javascript" src="js/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="js/easing.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
 	</body>
 </html>
