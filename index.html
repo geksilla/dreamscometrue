@@ -10,24 +10,19 @@
 <script type="text/javascript">
   VK.init({apiId: 3585098, onlyWidgets: true});
   VK.Widgets.Like('vk_like', {pageTitle: 'Dreams Come True', pageDescription: 'Шлях до мрії!', pageImage: "http://dreamscometrue.in.ua/1.jpg" }, dreamscometrue);
+  VK.Observer.subscribe('widgets.like.liked',function(r){
+  	likeAnimation();
+  });
+  VK.Observer.subscribe('widgets.like.unliked',function(r){
+  	unlikeAnimation();
+  });
 </script>
 </head>
 <body>
 <div id="fb-root"></div>
 
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=158660530866473";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-	<script>
-     window.fbAsyncInit = function() {
-         FB.init({
-             appId: 158660530866473,
-             status: true
-         });
+<script>
+window.fbAsyncInit = function() {
          FB.Event.subscribe('edge.create', function(href, widget) {
          	likeAnimation();
          });
@@ -35,6 +30,15 @@
          	unlikeAnimation();
          });
      };
+(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ru_RU/all.js#xfbml=1&appId=158660530866473";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+	<script>
+
  </script>
 	
 	<div id="main">
